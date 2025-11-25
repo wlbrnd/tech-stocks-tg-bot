@@ -1,10 +1,11 @@
 import logging
 import os
 import sqlite3
+import asyncio
 
 import pandas as pd
 from dotenv import load_dotenv
-from telegram import Update
+from telegram import Update, Bot
 from telegram.ext import (
     Application,
     CommandHandler,
