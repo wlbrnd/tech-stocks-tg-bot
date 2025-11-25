@@ -34,11 +34,8 @@ if not BOT_TOKEN:
 
 # Инициализирую базы данных
 def init_database():
-    data_path = os.path.join(
-        os.path.dirname(__file__),
-        "../../Desktop/python/tech-stocks-telegram-bot/data",
-        "tech_stocks_2024_cleaned.csv",
-    )
+    data_path = "tech_stocks_2024_cleaned.csv"
+    
     if not os.path.exists(data_path):
         logging.error(f"CSV с данными не найден: {data_path}")
         raise FileNotFoundError(f"Не найден файл данных: {data_path}")
@@ -199,5 +196,4 @@ def main():
 
 
 if __name__ == "__main__":
-    import os
-    port = os.environ.get('PORT', '8000')
+    main()
