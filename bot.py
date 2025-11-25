@@ -179,6 +179,9 @@ def main():
             logging.error("BOT_TOKEN не установлен.")
             return
 
+        asyncio.run(bot.delete_webhook(drop_pending_updates=True))
+        asyncio.run(bot.close())
+
         init_database()
         app = Application.builder().token(BOT_TOKEN).build()
 
@@ -189,7 +192,7 @@ def main():
         )
 
         logging.info("Бот запущен на сервере...")
-        app.run_polling()
+        app.run_polling(drop_pending_updates=True, allowed_updates=[])
 
     except Exception as e:
         logging.error(f"Ошибка запуска бота: {e}")
