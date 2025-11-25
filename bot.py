@@ -198,6 +198,6 @@ def main():
         logging.error(f"Ошибка запуска бота: {e}")
 
 
-if __name__ == == "__main__":
+if __name__ == "__main__":
     import os
     port = os.environ.get('PORT', '8000')
