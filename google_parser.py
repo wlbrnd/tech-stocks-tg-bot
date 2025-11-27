@@ -16,7 +16,7 @@ def _normalize_model_name(model: str | None) -> str:
     #Убирает префикс models/ и пробелы, если имя модели скопировано из ListModels.
 
     if not model:
-        return "gemini-1.5-flash"
+        return "gemini-2.0-flash-latest"
     cleaned = model.strip()
     if cleaned.startswith("models/"):
         cleaned = cleaned.split("models/", 1)[1]
@@ -24,7 +24,7 @@ def _normalize_model_name(model: str | None) -> str:
 
 
 GOOGLE_MODEL = _normalize_model_name(
-    os.getenv("GOOGLE_MODEL", "gemini-1.5-flash")
+    os.getenv("GOOGLE_MODEL", "gemini-2.0-flash-latest")
 )
 
 #Парсинг пользовательского запроса через Google AI Studio (Gemini).
